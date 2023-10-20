@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment{
+        PATH= "/opt/apache-maven-3.9.5/bin:$PATH"
+    }
+    stages {
+        stage("clone_code") {
+            steps {
+                git "https://github.com/muraliec5/maven1.git"
+            }
+        }
+        stage("Build_code"){
+            steps {
+                sh "mvn clean install"
+            }
+        }
+        stage("s3_upload"){
+            steps {
+                sh "aws s3 cp  /var/lib/jenkins/workspace/maven_pipeline  s3://s3-maven-bucket/maven_package/ --recursive"
+            }
+        }
+    }
+}
