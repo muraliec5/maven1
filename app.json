@@ -14,7 +14,7 @@ pipeline {
                 sh "mvn clean install"
             }
         }
-        stage("s3_upload"){
+        stage("s3_upload_backup"){
             steps {
                 sh "aws s3 cp  /var/lib/jenkins/workspace/maven_pipeline  s3://s3-maven-bucket/maven_package/ --recursive"
             }
