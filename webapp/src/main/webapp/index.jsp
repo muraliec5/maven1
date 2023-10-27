@@ -1,4 +1,17 @@
-           <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+ <div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <h2 style="text-align:center">Login with Social Media or Manually</h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+
+      <div class="col">
+        <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
         </a>
         <a href="#" class="google btn">
           <i class="fa fa-google fa-fw"></i> Login with Google+
@@ -29,4 +42,3 @@
     </div>
   </div>
 </div> 
-
